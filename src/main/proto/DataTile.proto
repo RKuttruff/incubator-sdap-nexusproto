@@ -112,8 +112,8 @@ message InsituTile{
     float latitude = 1;
     float longitude = 2;
 
-    float time = 3;
-    string time_dt = 4;
+    string time = 3;
+    uint64 timestamp = 4;
 
     float depth = 5;
 
