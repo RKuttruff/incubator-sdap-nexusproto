@@ -109,6 +109,10 @@ message TimeSeriesTile{
 }
 
 message InsituTile{
+    repeated InsituTileObservation observations = 1;
+}
+
+message InsituTileObservation{
     float latitude = 1;
     float longitude = 2;
 
