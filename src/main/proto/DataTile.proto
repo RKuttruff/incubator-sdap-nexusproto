@@ -108,6 +108,78 @@ message TimeSeriesTile{
     float depth = 6;
 }
 
+message InsituTile{
+    float latitude = 1;
+    float longitude = 2;
+
+    float time = 3;
+    string time_dt = 4;
+
+    float depth = 5;
+
+    Platform platform = 6;
+    string meta = 7; //ENSURE this is a string! Schema can have it be an object so string dump it if it is
+
+    string device = 8;
+
+    optional float air_pressure = 9;
+    optional float air_temperature = 10;
+    optional float dew_point_temperature = 11;
+    optional float downwelling_longwave_flux_in_air = 12;
+    optional float downwelling_longwave_radiance_in_air = 13;
+    optional float downwelling_shortwave_flux_in_air = 14;
+    optional float mass_concentration_of_chlorophyll_in_sea_water = 15;
+    optional float rainfall_rate = 16;
+    optional float relative_humidity = 17;
+    optional float sea_surface_salinity = 18;
+    optional float sea_surface_skin_temperature = 19;
+    optional float sea_surface_subskin_temperature = 20;
+    optional float sea_surface_temperature = 21;
+    optional float sea_water_density = 22;
+    optional float sea_water_electrical_conductivity = 23;
+    optional float sea_water_practical_salinity = 24;
+    optional float sea_water_salinity = 25;
+    optional float sea_water_temperature = 26;
+    optional float surface_downwelling_photosynthetic_photon_flux_in_air = 27;
+    optional float wet_bulb_temperature = 28;
+    optional float wind_speed = 29;
+    optional float wind_from_direction = 30;
+    optional float wind_to_direction = 31;
+    optional float eastward_wind = 32;
+    optional float northward_wind = 33;
+
+    optional uint32 air_pressure_quality = 34;
+    optional uint32 air_temperature_quality = 35;
+    optional uint32 dew_point_temperature_quality = 36;
+    optional uint32 downwelling_longwave_flux_in_air_quality = 37;
+    optional uint32 downwelling_longwave_radiance_in_air_quality = 38;
+    optional uint32 downwelling_shortwave_flux_in_air_quality = 39;
+    optional uint32 mass_concentration_of_chlorophyll_in_sea_water_quality = 40;
+    optional uint32 rainfall_rate_quality = 41;
+    optional uint32 relative_humidity_quality = 42;
+    optional uint32 sea_surface_salinity_quality = 43;
+    optional uint32 sea_surface_skin_temperature_quality = 44;
+    optional uint32 sea_surface_subskin_temperature_quality = 45;
+    optional uint32 sea_surface_temperature_quality = 46;
+    optional uint32 sea_water_density_quality = 47;
+    optional uint32 sea_water_electrical_conductivity_quality = 48;
+    optional uint32 sea_water_practical_salinity_quality = 49;
+    optional uint32 sea_water_salinity_quality = 50;
+    optional uint32 sea_water_temperature_quality = 51;
+    optional uint32 surface_downwelling_photosynthetic_photon_flux_in_air_quality = 52;
+    optional uint32 wet_bulb_temperature_quality = 53;
+    optional uint32 wind_speed_quality = 54;
+    optional uint32 wind_from_direction_quality = 55;
+    optional uint32 wind_to_direction_quality = 56;
+    optional uint32 wind_component_quality = 57;
+}
+
+message Platform{
+    string code = 1;
+    optional string id = 2;
+    optional string type = 3;
+}
+
 message MetaData{
     string name = 1;
     ShapedArray meta_data = 2;
@@ -179,5 +251,6 @@ message TileData{
         EccoTile ecco_tile = 5;
         GridMultiVariableTile grid_multi_variable_tile = 6;
         SwathMultiVariableTile swath_multi_variable_tile = 7;
+        InsituTile insitu_tile = 8;
     }
 }
